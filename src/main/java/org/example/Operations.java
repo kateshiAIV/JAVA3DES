@@ -8,5 +8,7 @@ public class Operations {
         System.out.println("operation OR: " + op);
         op = a & b;
         System.out.println("operation AND: " + op);
+        op = a ^ b;
+        System.out.println("operation XOR: " + op);
     }
 }
