@@ -1,25 +1,32 @@
 package org.example;
 
 public class Box {
-    private double height;
-    private double width;
+    int stackNum;
+    int stack[] = new int[12];
 
-    Box(double height, double width){
-        this.height = height;
-        this.width = width;
+    Box(){
+        stackNum = 0;
     }
 
-    public double getHeight(){
-        return height;
+    public void push(int i){
+        if(stackNum>12){
+            System.out.println("Stack is full");
+        }
+        else{
+            System.out.println("pushed " + i);
+            stack[++stackNum]=i;
+        }
     }
-    public double getWidth(){
-        return width;
-    }
-    public void setWidth(double width){
-        this.width = width;
-    }
-    public void setHeight(double height){
-        this.height = height;
+    public int pop(){
+        int ret = 0;
+        if(stackNum<0){
+            System.out.println("Stack is empty");
+        }
+        else{
+            ret = stack[stackNum--];
+            System.out.println("poped " + ret);
+        }
+        return ret;
     }
 
 }
