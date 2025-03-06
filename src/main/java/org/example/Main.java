@@ -6,24 +6,12 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-
-
-        Box stack = new Box();
-        Scanner scan = new Scanner(System.in);
-        int op;
-        while (true){
-            op = scan.nextInt();
-            switch (op){
-                case 1:{
-                    System.out.println("push: ");
-                    stack.push(scan.nextInt());
-                    break;
-                }
-                case 2:{
-                    System.out.println("pop: "+ stack.pop());
-                    break;
-                }
-            }
+        int size = 10;
+        Rekurencja r = new Rekurencja(size);
+        for (int i =0;i<size;i++){
+            r.tab[i] = i;
         }
+        r.printTab(size-1);
+
     }
 }
