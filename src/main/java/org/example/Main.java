@@ -6,12 +6,13 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        int size = 10;
-        Rekurencja r = new Rekurencja(size);
-        for (int i =0;i<size;i++){
-            r.tab[i] = i;
-        }
-        r.printTab(size-1);
+        Square s1 = new Square(8.0, 5.5);
+        Cube c1 = new Cube(5.0,2.0,3.0);
+        s1.P();
+        c1.P();
+        Square s2 = c1;
+        s2.P();
+        c1.Volume();
 
     }
 }
