@@ -51,6 +51,9 @@ class Des{
         //initializing crypto algorithm
         Cipher myCipher = Cipher.getInstance("DES/CTR/NoPadding");
         System.out.println("Input: " + test);
+
+        long startTotal = System.nanoTime();
+        long startEncrypt = System.nanoTime();
         //encrypt with key 1
         myCipher.init(Cipher.ENCRYPT_MODE, myDesKey1, ivSpec);
         byte[] myEncryptedBytes=myCipher.doFinal(myFile);
@@ -72,6 +75,8 @@ class Des{
         encrypteddata=new String(myEncryptedBytes);
         System.out.println("3st step: " + encrypteddata);
 
+        long finishEncrypt = System.nanoTime();
+        long startDecrypt = System.nanoTime();
 
 
         //dencrypt with key 3
@@ -93,6 +98,14 @@ class Des{
         myEncryptedBytes=myCipher.doFinal(myEncryptedBytes);
         encrypteddata=new String(myEncryptedBytes);
         System.out.println("6st step: " + encrypteddata);
+
+        long finishDecrypt = System.nanoTime();
+        long finishTotal = System.nanoTime();
+
+        System.out.println("Encryption Time: " + (finishEncrypt - startEncrypt));
+        System.out.println("Decryption Time: " + (finishDecrypt - startDecrypt));
+        System.out.println("Total Time: " + (finishTotal - startTotal));
+
 
     }
 }
